@@ -1,0 +1,26 @@
+{
+    "name": "omar-vasquez-dev/solid-domain",
+    "description": "Layer domain to implement the single responsibility use cases of SOLID principles. With exception handling using a success and failure response fold",
+    "version": "0.2.1",
+    "type": "library",
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "00f100/phpdbug": "*",
+        "phpunit/phpunit": "6.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Omar Vasquez",
+            "email": "omar.vasquez.dev@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ArrayDot\\": "src/"
+        },
+        "files": ["src/helpers.php"]
+    }
+}
