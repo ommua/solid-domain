@@ -1,6 +1,6 @@
 {
-    "name": "omar-vasquez-dev/solid-domain",
-    "description": "Layer domain to implement the single responsibility use cases of SOLID principles. With exception handling using a success and failure response fold",
+    "name": "ommua/solid-domain",
+    "description": "A PHP library that wraps and handle the errors in one place following the SOLID principle",
     "version": "0.2.1",
     "type": "library",
     "require": {
@@ -19,8 +19,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "ArrayDot\\": "src/"
-        },
-        "files": ["src/helpers.php"]
+            "Ommua\\": "src/"
+        }
     }
 }
