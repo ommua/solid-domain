@@ -1,10 +1,13 @@
 {
     "name": "ommua/solid-domain",
     "description": "A PHP library that wraps and handle the errors in one place following the SOLID principle",
-    "version": "0.2.1",
+    "version": "0.1.1-beta1",
     "type": "library",
+    "homepage": "https://github.com/ommua/solid-domain",
+    "keywords": ["Package", "Test"],
+    "minimum-stability": "dev",
     "require": {
-        "php": ">=5.4"
+        "php": ">=7.1"
     },
     "require-dev": {
         "00f100/phpdbug": "*",
