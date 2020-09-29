@@ -2,7 +2,7 @@
 
 A PHP library that wraps and handle the errors in one place following the SOLID principle
 
-[![Build Status](https://travis-ci.org/00F100/array_dot.svg?branch=master)](https://travis-ci.org/00F100/array_dot) [![codecov](https://codecov.io/gh/00F100/array_dot/branch/master/graph/badge.svg)](https://codecov.io/gh/00F100/array_dot) [![Total Downloads](https://poser.pugx.org/00F100/array_dot/downloads)](https://packagist.org/packages/00F100/array_dot)
+[![Total Downloads](https://poser.pugx.org/ommua/solid-domain/downloads)](https://packagist.org/packages/ommua/solid-domain)
 
 ## How to install
 
@@ -24,6 +24,7 @@ or add in composer.json
 
 ## How to use
 
+##### Note: required implement "final protected function invokeDomain()" in your new Object Domain
 ```php
 EXAMPLE: 
 <?php
@@ -32,9 +33,12 @@ use Ommua\SuccessResponse;
 use Ommua\SolidDomain;
 use Ommua\Interfaces\EitherFailureOrSuccess;
 
+
+
 class ConvertStringToInteger extends SolidDomain
 {
     /**
+     *  
      * @param String $stringNumber
      * @return EitherFailureOrSuccess
      */
@@ -59,6 +63,15 @@ $result= $failureOrSuccess->fold(function($error){
 // Print: 5
 echo $result;
 
-// Print: Error cast string five
+$failureOrSuccess = $convertStringToInteger("five");
+$result= $failureOrSuccess->fold(function($error){
+   return $error;
+}, function ($success){
+    return $success;
+});
+
+
+// Print:  ["Error cast string five"]
+echo $result;
 
 ```

@@ -1,11 +1,10 @@
 {
     "name": "ommua/solid-domain",
     "description": "A PHP library that wraps and handle the errors in one place following the SOLID principle",
-    "version": "0.1.1-beta1",
+    "version": "0.1.2",
     "type": "library",
     "homepage": "https://github.com/ommua/solid-domain",
-    "keywords": ["Package", "Test"],
-    "minimum-stability": "dev",
+    "keywords": ["Package", "Test", "SOLID", "DDD", "case uses", "boilerplate", "exception", "error", "logging"],
     "require": {
         "php": ">=7.1"
     },
@@ -17,7 +16,9 @@
     "authors": [
         {
             "name": "Omar Vasquez",
-            "email": "omar.vasquez.dev@gmail.com"
+            "email": "omar.vasquez.dev@gmail.com",
+            "homepage": "https://github.com/omar-vasquez-dev",
+            "role": "Developer"
         }
     ],
     "autoload": {
