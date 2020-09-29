@@ -7,7 +7,8 @@
     "keywords": ["Package", "Test", "SOLID", "DDD", "case uses", "boilerplate", "exception", "error", "logging"],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=7.1"
+        "php": ">=7.1",
+        "vendor/package": "1.3.2"
     },
     "require-dev": {
         "00f100/phpdbug": "*",
