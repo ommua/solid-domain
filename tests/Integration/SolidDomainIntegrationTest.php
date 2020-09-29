@@ -8,22 +8,33 @@ class SolidDomainIntegrationTest  extends TestCase
         $convertStringToInteger = new ConvertStringToInteger();
         $failOrSuccess = $convertStringToInteger(new \Ommua\Example\StringParameter("5"));
         $assertResult = $failOrSuccess->fold(function($error){
-           return false;
+           return $error;
         }, function ($success){
-            return 5 === $success;
+            return $success;
         });
-        $this->assertTrue($assertResult);
+        $this->assertEquals(5, $assertResult);
     }
+
 
     public function testShouldResultFailureIfStringIsNotNumber(){
         $convertStringToInteger = new ConvertStringToInteger();
         $failOrSuccess = $convertStringToInteger(new \Ommua\Example\StringParameter("cinco"));
         $assertResult = $failOrSuccess->fold(function($error){
-            $this->assertContains("Error cast string", $error[0]);
-            return true;
+            return $error;
         }, function ($success){
-            return false;
+            return $success;
         });
-        $this->assertTrue($assertResult);
+        $this->assertContains("Error cast string",$assertResult[0]);
+    }
+
+    public function testShouldResultErorrParams(){
+        $convertStringToInteger = new ConvertStringToInteger();
+        $failOrSuccess = $convertStringToInteger("cinco");
+        $assertResult = $failOrSuccess->fold( static function($error){
+            return $error;
+        }, static function ($success){
+            return $success;
+        });
+        $this->assertContains("Argument 1 passed to Ommua\Example\ConvertStringToInteger::invokeDomain() must be an instance of Ommua\Example\StringParameter, string given",$assertResult[0]);
     }
 }
