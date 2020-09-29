@@ -37,10 +37,10 @@ trait InvokeDomain
                 }
             }
 
-            throw new ExceptionErrorInvokeDomain("The called method `{$this->HANDLER_METHOD_INVOKE}()` is required private.");
+            throw new ExceptionErrorInvokeDomain("The called method `{$this->HANDLER_METHOD_INVOKE}()` is required protected.");
         }
 
         $className = get_class($this);
-        throw  new ExceptionErrorInvokeDomain("Required implement: `private function {$this->HANDLER_METHOD_INVOKE}()` in your domain  -> {$className}");
+        throw  new ExceptionErrorInvokeDomain("Required implement: `protected function {$this->HANDLER_METHOD_INVOKE}()` in your domain  -> {$className}");
     }
 }
