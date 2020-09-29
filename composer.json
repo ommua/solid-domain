@@ -6,7 +6,7 @@
     "homepage": "https://github.com/ommua/solid-domain",
     "keywords": ["Package", "Test", "SOLID", "DDD", "case uses", "boilerplate", "exception", "error", "logging"],
     "require": {
-        "php": ">=7.1",
+        "php": ">=7.1"
     },
     "require-dev": {
         "00f100/phpdbug": "*",
